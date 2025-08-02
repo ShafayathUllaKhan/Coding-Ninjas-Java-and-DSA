@@ -72,3 +72,83 @@ branch 'main' set up to track 'origin/main'.
 
 Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA (main)
 $
+
+java it is a programming language 
+
+
+🔁 Relationship:
+When your computer starts:
+
+CPU wakes up and talks to the motherboard.
+
+It looks into the SSD for the bootloader and operating system (e.g., Windows or Linux).
+
+The OS is loaded into RAM, and the CPU begins executing OS instructions.
+
+
+🔄 Who Does What?
+🧠 1. Motherboard Starts First
+When you power on your laptop, the motherboard activates.
+
+It contains a special chip called BIOS or UEFI firmware.
+
+⚙️ 2. BIOS/UEFI Wakes Up the CPU
+BIOS checks all hardware: RAM, CPU, storage, keyboard, etc. (this is called POST – Power-On Self-Test).
+
+Then it tells the CPU:
+👉 “Here's where to look for the operating system.”
+
+🚀 3. CPU Finds the OS Boot Loader
+The CPU executes the BIOS instructions and looks into storage (usually your SSD’s C: drive) for:
+
+MBR (Master Boot Record) or
+
+EFI Boot Loader
+
+🧠 This boot loader tells the CPU:
+“Here’s how to start Windows / Linux / any OS.”
+
+📌 Final Chain of Command (Simplified):
+text
+Copy
+Edit
+Power Button Pressed
+         ↓
+Motherboard (BIOS/UEFI starts)
+         ↓
+BIOS tells CPU to load boot loader from SSD
+         ↓
+CPU loads OS into RAM
+         ↓
+You see login screen!
+🧠 Summary:
+Component	Role
+Motherboard	Coordinates everything; BIOS/UEFI tells CPU where OS is located
+CPU	Executes instructions to load OS from SSD into RAM
+RAM	Temporarily holds OS and apps while you're using them
+SSD (C: drive)	Stores the OS (Windows/Linux), apps, and user files permanently
+
+
+
+javac helloword.java --> compliles and create byte code 
+java helloworld --> calls jvm and convert the byte code to machine code and helloworld is class name
+
+jdk 
+Yes, the JDK includes the Java Compiler (javac) — and that's what converts Java source code into bytecode.
+
+dev tools + jre --> classes packages + jvm 
+
+“RAM holds the data, but OS shows the data.”
+
+
+
+
+
+
+
+
+
+
+
+
+
