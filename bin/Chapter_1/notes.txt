@@ -26,3 +26,49 @@ Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA
 $ 
 
 Admin@DESKTOP-
+
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA (main)
+$ git remote -v
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA (main)           and-DSA.git
+$ git remote add origin https://github.com/ShafayathUllaKhan/Coding-Ninjas-Java-
+and-DSA.git
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA (main)           ch)
+$ git remote -v                                                                 h)
+origin  https://github.com/ShafayathUllaKhan/Coding-Ninjas-Java-and-DSA.git (fet
+ch)
+origin  https://github.com/ShafayathUllaKhan/Coding-Ninjas-Java-and-DSA.git (pus
+h)
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA (main)
+$ git add .
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA (main)
+$ git commit -m "latest commit"
+[main (root-commit) 2e6c2a0] latest commit
+ 8 files changed, 104 insertions(+)       
+ create mode 100644 .classpath
+ create mode 100644 .project
+ create mode 100644 .settings/org.eclipse.core.resources.prefs
+ create mode 100644 .settings/org.eclipse.jdt.core.prefs
+ create mode 100644 bin/Chapter_1/notes.txt
+ create mode 100644 bin/module-info.class
+ create mode 100644 src/Chapter_1/notes.txt
+ create mode 100644 src/module-info.java
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA (main)
+$ git push -u origin main
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (13/13), 1.78 KiB | 151.00 KiB/s, done.
+Total 13 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/ShafayathUllaKhan/Coding-Ninjas-Java-and-DSA.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA (main)
+$
