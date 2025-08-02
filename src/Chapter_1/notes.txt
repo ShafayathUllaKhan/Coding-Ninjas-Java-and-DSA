@@ -1,0 +1,28 @@
+echo "# Coding-Ninjas-Java-and-DSA" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ShafayathUllaKhan/Coding-Ninjas-Java-and-DSA.git
+git push -u origin main
+
+eclipse terminal commands
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~
+$ cd Java_and_DSA
+bash: cd: Java_and_DSA: No such file or directory
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~
+$ 
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~
+$ cd Java_and_DSA
+bash: cd: Java_and_DSA: No such file or directory
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~
+$ cd /c/Users/Admin/eclipse-workspace/Java_and_DSA
+
+Admin@DESKTOP-J2D17B8 MINGW64 ~/eclipse-workspace/Java_and_DSA
+$ 
+
+Admin@DESKTOP-
