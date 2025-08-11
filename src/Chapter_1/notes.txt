@@ -140,7 +140,7 @@ dev tools + jre --> classes packages + jvm
 
 “RAM holds the data, but OS shows the data.”
 
-
+//		 "'\u000'"
 
 
 

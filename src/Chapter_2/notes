@@ -1,0 +1,92 @@
+Primitive Data Types in Java
+
+Integral
+
+byte 1 byte
+short 2 byte
+int 4 byte
+long 8 byte 
+
+Floating Point
+
+float 4
+double 8
+
+char 2 // has to be in single quote
+// ascii storage in java
+// unicode storage in java
+// does not have negative value
+
+boolean
+
+// how are numbers stored
+check in your phone you have a screenshot
+
+
+Absolutely! Let’s explain 8 and -8 in 4-bit binary using two’s complement, step by step.
+
+⚠️ IMPORTANT:
+❗ 4-bit numbers can only represent values from:
+css
+Copy code
+-8 to +7
+Why?
+
+MSB = 0 → Positive numbers: 0000 (0) to 0111 (+7)
+
+MSB = 1 → Negative numbers: 1000 (-8) to 1111 (-1)
+
+So, +8 cannot be represented in 4 bits. It overflows.
+
+✅ Now Let's See:
+-8 in 4-bit binary (Two’s Complement)
+This is directly represented as:
+
+yaml
+Copy code
+1000
+👉 In 4-bit two’s complement, 1000 is -8.
+
+What About +8?
+ini
+Copy code
+1000 = -8  ❌ Not +8
+So +8 is NOT representable in 4 bits because the range only goes up to +7.
+
+Trying to store +8 in 4 bits will cause overflow.
+
+🔁 Valid 4-bit Two’s Complement Range:
+Decimal	4-bit Binary
+-8	1000
+-7	1001
+-6	1010
+-5	1011
+-4	1100
+-3	1101
+-2	1110
+-1	1111
+0	0000
+1	0001
+2	0010
+3	0011
+4	0100
+5	0101
+6	0110
+7	0111
+
+❌ 8 cannot be stored in 4-bit two’s complement.
+
+🧠 Why is -8 represented as 1000?
+It's the lowest number that can be stored in 4 bits.
+
+Two’s complement makes it work perfectly in arithmetic.
+
+✅ Summary
+✔ -8 in 4-bit binary: 1000
+
+❌ +8 can’t be represented in 4-bit binary
+
+4-bit two’s complement covers -8 to +7
+
+
+
