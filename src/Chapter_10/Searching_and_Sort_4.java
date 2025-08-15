@@ -34,7 +34,7 @@ public class Searching_and_Sort_4 {
 		}
 		
 		for(int s=0;s< c.length;s++) {
-			System.out.print(c[s] + " ");
+			System.out.print(c[s] + " ");// here if you give i it will give error java does not support shodowing but js supports
 		}
 	}
 

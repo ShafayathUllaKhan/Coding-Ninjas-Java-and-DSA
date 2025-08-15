@@ -18,19 +18,6 @@ public class VarSession {
 		
 		boolean vate = true;
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }

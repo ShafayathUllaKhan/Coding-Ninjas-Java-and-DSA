@@ -42,9 +42,6 @@ public class Dimensional_Array_4 {
 			}
 			
 		}
-		
-		
-		
 	}
 
 }

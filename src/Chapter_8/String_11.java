@@ -10,7 +10,7 @@ public class String_11 {
 		
 		StringBuffer sb = new StringBuffer("Hello");// capacity is 16 characters but it will expand
 		
-		System.out.println(sb.length());// 0
+		System.out.println(sb.length());// 5
 		System.out.println(sb.capacity());// 16 21 hello is added thats why it is 21
 		// does not create a string in string pool again and again
 		
