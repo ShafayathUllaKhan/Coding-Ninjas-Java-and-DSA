@@ -1,0 +1,46 @@
+package Chapter_14;
+
+import java.util.Scanner;
+
+public class ShapeUSe {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		Rectangle r1 = new Rectangle();
+		Rectangle r2 = new Rectangle(3,4);
+		
+		r2.info();
+		r2.info("rectangle");
+		
+		Shape s = new Shape();
+		s.draw();
+		
+		int num = sc.nextInt();
+		
+		if(num < 10) {
+			s = new Circle();
+		}else {
+			s = new Rectangle();
+		}
+		
+		s.draw();
+		Circle c = new Circle();
+		c.draw();
+		
+		Rectangle r = new Rectangle();
+		r.draw();
+		
+		// run time polymorphism
+		Shape s2 = new Circle();
+		s2.draw();// Circle drawn
+		s2 = new Rectangle();
+		s2.draw();// Rectangle drawn
+		
+		// s2.radius = 10;// radius cannot be resolved or is not a field compiler is creating a problem here 
+		
+		
+		
+	}
+}
