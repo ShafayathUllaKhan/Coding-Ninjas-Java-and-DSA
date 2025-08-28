@@ -1,6 +1,6 @@
 package Chapter_14;
 
-public class Car extends Vehicle {
+public abstract class Car extends Vehicle {
 //	Car(){
 //		System.out.println("Car default constructor");
 //	}// Vehicle constructor is called and then car constructor is called
@@ -22,6 +22,12 @@ public class Car extends Vehicle {
 	
 	public void printMaxSpeed() {
 		System.out.println("maxspeed" + maxSpeed + "vehicle maxspeed" + super.maxSpeed);
+	}
+
+	@Override
+	public boolean isMotorized() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 	
 }

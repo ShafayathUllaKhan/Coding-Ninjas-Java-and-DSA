@@ -1,6 +1,6 @@
 package Chapter_14;
 
-public class Vehicle {
+public abstract class Vehicle {
 	Vehicle(){
 		System.out.println("Vehicle default constructor");
 	}
@@ -24,4 +24,7 @@ public class Vehicle {
 	public void print() {
 		System.out.println("Vehicle " + " color "+ color + " maxSpeed "+ maxSpeed);
 	}
+	
+	public abstract boolean isMotorized();
+	public abstract String getCompany();
 }

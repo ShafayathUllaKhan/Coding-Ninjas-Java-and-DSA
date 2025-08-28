@@ -76,4 +76,22 @@ public static void main(String[] args) {
 		// s2.radius = 10;// radius cannot be resolved or is not a field compiler is creating a problem here 
 	}
 
+// final
+final variable 
+final method no overriding
+final class no extend
+string class is final( String str)
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,6 +1,12 @@
 package Chapter_14;
 
-public class Bicycle extends Vehicle {
+public abstract class Bicycle extends Vehicle {
+
+	@Override
+	public boolean isMotorized() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 	
 }
