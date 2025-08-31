@@ -82,6 +82,8 @@ final method no overriding
 final class no extend
 string class is final( String str)
 
+// generics
+
 
 
 
