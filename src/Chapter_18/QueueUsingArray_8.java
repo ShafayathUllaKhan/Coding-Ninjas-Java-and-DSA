@@ -27,9 +27,10 @@ public class QueueUsingArray_8 {
 		return size == 0;// o(n)
 	}
 	
-	public void enqueue(int elem) throws QueueFullException_11 {
+	public void enqueue(int elem) {
 		if(size == data.length) {
-			throw new QueueFullException_11();
+			// throw new QueueFullException_11();
+			doubleCapacity();
 		}
 		if(size == 0) {
 			front = 0;
@@ -43,6 +44,21 @@ public class QueueUsingArray_8 {
 		size++;
 	}// o(n)
 	
+	private void doubleCapacity() {
+		// TODO Auto-generated method stub
+		int temp[] = data;
+		data = new int[2 * temp.length];
+		int index = 0;
+		for(int i=front;i<temp.length;i++) {
+			data[index++] = temp[i];
+		}
+		for(int i=0;i<front;i++) {
+			data[index++] = temp[i];
+		}
+		front = 0;
+		rear = temp.length -1;
+	}
+
 	public int front() throws QueueEmptyException_10 {
 		if(size == 0) {
 			throw new QueueEmptyException_10();
