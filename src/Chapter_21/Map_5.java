@@ -36,6 +36,8 @@ public class Map_5<K,V> {
 				}else {
 					buckets.set(bucketIndex, head.next);
 				}
+				count--;
+				return head.value;
 			}
 			prev = head;
 			head = head.next;	
@@ -54,6 +56,24 @@ public class Map_5<K,V> {
 		}
 		return null;
 	}
+	private void reHash() {
+		ArrayList<MapNode_4<K,V>> temp = buckets;
+		buckets = new ArrayList<>();
+		for(int i=0;i< 2*numBuckets;i++) {
+			buckets.add(null);
+		}
+		count = 0;
+		numBuckets = numBuckets*2;
+		for(int i=0;i<temp.size();i++) {
+			MapNode_4<K,V> head = temp.get(i);
+			while(head != null) {
+				K key = head.key;
+				V value = head.value;
+				insert(key,value);
+				head = head.next;
+			}
+		}
+	}
 	
 	public void insert(K key,V value) {
 		int bucketIndex = getBucketIndex(key);
@@ -71,6 +91,11 @@ public class Map_5<K,V> {
 		MapNode_4<K,V> newNode = new MapNode_4<>(key,value);
 		newNode.next = head;
 		buckets.set(bucketIndex, newNode);
+		count++;
+		double loadFactor = (1.0 *count)/numBuckets;
+		if(loadFactor > 0.7) {
+			reHash();
+		}
 		
 	}
 
