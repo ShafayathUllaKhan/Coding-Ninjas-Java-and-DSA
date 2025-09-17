@@ -9,7 +9,7 @@ public class Map_5<K,V> {
 	
 	public Map_5() {
 		buckets = new ArrayList<>();
-		numBuckets = 20;
+		numBuckets = 5;
 		for(int i=0;i<numBuckets;i++) {
 			buckets.add(null);
 		}
@@ -73,6 +73,10 @@ public class Map_5<K,V> {
 				head = head.next;
 			}
 		}
+	}
+	
+	public double loadFactor() {
+		return (1.0 *count)/numBuckets;
 	}
 	
 	public void insert(K key,V value) {
