@@ -1,5 +1,6 @@
 package Chapter_20;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -246,6 +247,138 @@ public class BinaryTreeUse_2 {
 		BinaryTreeNode_1<Integer> root = buildTreeFromPreInHelper(pre,in,0,pre.length-1,0,in.length-1);
 		return root;
 	}
+	
+	public static boolean searchBST(BinaryTreeNode_1<Integer> root,int data) {
+		if(root == null) {
+			return false;
+		}
+		if(root.data == data) {
+			return true;
+		}
+		if(data < root.data) {
+			return searchBST(root.left,data);
+		}
+		return searchBST(root.right,data);
+	}
+	
+	public static void printBetweenK1K2(BinaryTreeNode_1<Integer> root,int k1,int k2) {
+		if(root == null) {
+			return;
+		}
+		if(root.data < k1) {
+			printBetweenK1K2(root.right,k1,k2);
+		}else if(root.data > k2) {
+			printBetweenK1K2(root.left,k1,k2);
+		}else {
+			System.out.println(root.data);
+			printBetweenK1K2(root.left,k1,k2);
+			printBetweenK1K2(root.right,k1,k2);
+		}
+	}
+	
+	public static int minimum(BinaryTreeNode_1<Integer> root) {
+		if(root == null) {
+			return Integer.MAX_VALUE;
+		}
+		int leftMin = minimum(root.left);
+		int rightMin = minimum(root.right);
+		return Math.min(root.data,Math.min(leftMin, rightMin));
+		
+	}
+	
+	public static int largest1(BinaryTreeNode_1<Integer> root) {
+		if(root == null) {
+			return Integer.MIN_VALUE;
+		}
+		int largestLeft = largest1(root.left);
+		int largestRight = largest1(root.right);
+		return Math.max(root.data, Math.max(largestLeft, largestRight));
+	}
+	
+	public static boolean isBST(BinaryTreeNode_1<Integer> root) {
+		if(root == null) {
+			return true;
+		}
+		
+		int leftMax = largest1(root.left);
+		if(leftMax >= root.data) {
+			return false;
+		}
+		int rightMIn = minimum(root.right);
+		if(rightMIn < root.data) {
+			return false;
+		}
+		
+		boolean isLeftBST = isBST(root.left);
+		boolean isRightBST = isBST(root.right);
+		return isLeftBST && isRightBST;
+	}
+	
+	public static IsBSTReturn_4 isBSTBetter(BinaryTreeNode_1<Integer> root) {
+		if(root == null) {
+			IsBSTReturn_4 ans = new IsBSTReturn_4(Integer.MAX_VALUE,Integer.MIN_VALUE,true);
+			return ans;
+		}
+		IsBSTReturn_4 leftAns = isBSTBetter(root.left);
+		IsBSTReturn_4 rightAns = isBSTBetter(root.right);
+		int min = Math.min(root.data, Math.min(leftAns.min, rightAns.min));
+		int max = Math.max(root.data, Math.max(leftAns.max, rightAns.max));
+		boolean isBST = true;
+		if(leftAns.max >= root.data) {
+			isBST = false;
+		}
+		if(rightAns.min < root.data) {
+			isBST = false;
+		}
+		if(!leftAns.isBST) {
+			isBST = false;
+		}
+		if(!rightAns.isBST) {
+			isBST = false;
+		}
+		
+		IsBSTReturn_4 ans = new IsBSTReturn_4(min,max,isBST);
+		return ans;
+	}
+	
+	public static boolean isBSTmorebetter(BinaryTreeNode_1<Integer> root,int minRange,int maxRange) {
+		if(root == null) {
+			return true;
+		}
+		if(root.data < minRange || root.data > maxRange) {
+			return false;
+		}
+		boolean isLeftwithinRange = isBSTmorebetter(root.left,minRange,root.data-1);
+		boolean isRightwithinRange = isBSTmorebetter(root.right,root.data,maxRange);
+		return isLeftwithinRange && isRightwithinRange;
+	}
+	
+	public static ArrayList<Integer> nodeToRootPath(BinaryTreeNode_1<Integer> root,int x){
+		if(root == null) {
+			return null;
+		}
+		if(root.data == x) {
+			ArrayList<Integer> output = new ArrayList<Integer>();
+			output.add(root.data);
+			return output;
+		}
+		
+		ArrayList<Integer> leftOutput = nodeToRootPath(root.left,x);
+		if(leftOutput != null) {
+			leftOutput.add(root.data);
+			return leftOutput;
+		}
+		
+		ArrayList<Integer> rightOutput = nodeToRootPath(root.right,x);
+		if(rightOutput != null) {
+			rightOutput.add(root.data);
+			return rightOutput;
+		}
+		
+		return null;
+	}
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -274,13 +407,29 @@ public class BinaryTreeUse_2 {
 		System.out.println("is balanced"+isBalanced(root));
 		System.out.println("is balanced "+isBalancedBetter(root).isBalanced);
 		
-		int in[] = {};
-		int pre[] = {};
+		int in[] = {1,2,3,4,5,6,7};
+		int pre[] = {4,2,1,3,6,5,7};
 		BinaryTreeNode_1<Integer> rootPreIn = buildTreeFromPreIn(pre,in);
 		printTreeDetailed(rootPreIn);
+		System.out.println(searchBST(root,3));
+		System.out.println(isBST(root));
+		IsBSTReturn_4 ans = isBSTBetter(root);
+		System.out.println(ans.min + " "+ ans.max + " "+ans.isBST);
+		
+		rootPreIn = takeTreeInputBetter(true,0,true);
+		ArrayList<Integer> path = nodeToRootPath(rootPreIn,5);
+		if(path == null) {
+			System.out.println("Not Found");
+		}else {
+			for(int i:path) {
+				System.out.println(i);
+			}
+		}
+		
 		// pending problems
 		// height of tree level wise
 		// diameter of binary tree
 		// tree traversal
+		// convert sorted array to bst
 	}
 }
