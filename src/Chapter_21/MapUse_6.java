@@ -15,5 +15,17 @@ public class MapUse_6 {
 			System.out.println("abc"+i+":"+map.getValue("abc"+i));
 		}
 	}
-
+	// balanced bst is a tree whose height of left and right should be less or equal to one
+	
+	// heap
+	// complete binary tree
+	// heap order property
+	
+	// cbt (complete binary tree)
+//	all levels should be completely filled except the last level
+	// and elements should be inserted from left to right in each level
+	
+	
+	
+	
 }
