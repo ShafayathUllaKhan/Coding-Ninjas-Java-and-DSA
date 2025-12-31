@@ -38,6 +38,7 @@ public class KruskalAlgorithm_2 {
 		for(int j = 0;j<n;j++) {
 			parent[j] = j;
 		}
+		// union find algorithm
 		int count = 0,i=0;
 		while(count != n - 1) {
 			Edge currentEdge = edges[i++];
@@ -86,3 +87,7 @@ public class KruskalAlgorithm_2 {
 
 
 }
+
+// union find with rank and path compression - try by yourself
+//mst --> kruskal
+//    --> prims
